@@ -1,0 +1,116 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CiscoLive-2016",
+		"_postman_id": "2f7e11b2-0106-1f4d-5cab-b81017175f7a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REST Demo: Get Management 0/0 on ASAv",
+			"request": {
+				"url": "https://172.16.112.110/api/interfaces/physical/Management0_API_SLASH_0",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2lzY286Y2lzY28=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Get Physical Interfaces\n"
+			},
+			"response": []
+		},
+		{
+			"name": "RESTCONF: Get Gig1 interface-state from ASR1Kv",
+			"request": {
+				"url": "http://172.16.112.101:8008/api/operational/interfaces-state/interface/GigabitEthernet1?deep",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2lzY286Y2lzY28=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.yang.data+json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.yang.data+json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "RESTCONF: Get Gig1 config",
+			"request": {
+				"url": "http://172.16.112.101:8008/api/running/interfaces/interface/GigabitEthernet1?deep",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2lzY286Y2lzY28=",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.yang.data+json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "RESTCONF: Change Gig2 description",
+			"request": {
+				"url": "http://172.16.112.101:8008/api/running/interfaces/interface/GigabitEthernet1",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2lzY286Y2lzY28=",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.yang.data+json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.yang.data+json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ietf-interfaces:interface\": {\n    \"description\": \"Configured via Shelly\"\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
