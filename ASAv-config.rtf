@@ -1,0 +1,537 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww16600\viewh11620\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\fs28 \cf0 \expnd0\expndtw0\kerning0
+ciscoasa# show run
+\f1 \
+
+\f0 : Saved
+\f1 \
+
+\f0 \
+:
+\f1 \
+
+\f0 : Serial Number: 9A9VMUQDFH7
+\f1 \
+
+\f0 : Hardware:\'a0 \'a0ASAv, 1024 MB RAM, CPU Pentium II 2600 MHz
+\f1 \
+
+\f0 :
+\f1 \
+
+\f0 ASA Version 9.5(2)208
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 hostname ciscoasa
+\f1 \
+
+\f0 enable password 8Ry2YjIyt7RRXU24 encrypted
+\f1 \
+
+\f0 xlate per-session deny tcp any4 any4
+\f1 \
+
+\f0 xlate per-session deny tcp any4 any6
+\f1 \
+
+\f0 xlate per-session deny tcp any6 any4
+\f1 \
+
+\f0 xlate per-session deny tcp any6 any6
+\f1 \
+
+\f0 xlate per-session deny udp any4 any4 eq domain
+\f1 \
+
+\f0 xlate per-session deny udp any4 any6 eq domain
+\f1 \
+
+\f0 xlate per-session deny udp any6 any4 eq domain
+\f1 \
+
+\f0 xlate per-session deny udp any6 any6 eq domain
+\f1 \
+
+\f0 names
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/0
+\f1 \
+
+\f0 \'a0description Add description test
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0nameif gig0
+\f1 \
+
+\f0 \'a0security-level 10
+\f1 \
+
+\f0 \'a0ip address 192.168.1.2 255.255.255.0
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/1
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/2
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/3
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/4
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/5
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/6
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/7
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface GigabitEthernet0/8
+\f1 \
+
+\f0 \'a0shutdown
+\f1 \
+
+\f0 \'a0no nameif
+\f1 \
+
+\f0 \'a0no security-level
+\f1 \
+
+\f0 \'a0no ip address
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 interface Management0/0
+\f1 \
+
+\f0 \'a0description Configured again
+\f1 \
+
+\f0 \'a0nameif management
+\f1 \
+
+\f0 \'a0security-level 100
+\f1 \
+
+\f0 \'a0ip address 172.16.112.110 255.255.255.0
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 ftp mode passive
+\f1 \
+
+\f0 pager lines 23
+\f1 \
+
+\f0 mtu management 1500
+\f1 \
+
+\f0 mtu gig0 1500
+\f1 \
+
+\f0 no failover
+\f1 \
+
+\f0 icmp unreachable rate-limit 1 burst-size 1
+\f1 \
+
+\f0 no asdm history enable
+\f1 \
+
+\f0 arp timeout 14400
+\f1 \
+
+\f0 no arp permit-nonconnected
+\f1 \
+
+\f0 route management 0.0.0.0 0.0.0.0 172.16.112.1 1
+\f1 \
+
+\f0 timeout xlate 3:00:00
+\f1 \
+
+\f0 timeout pat-xlate 0:00:30
+\f1 \
+
+\f0 timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 sctp 0:02:00 icmp 0:00:02
+\f1 \
+
+\f0 timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+\f1 \
+
+\f0 timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+\f1 \
+
+\f0 timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+\f1 \
+
+\f0 timeout tcp-proxy-reassembly 0:01:00
+\f1 \
+
+\f0 timeout floating-conn 0:00:00
+\f1 \
+
+\f0 user-identity default-domain LOCAL
+\f1 \
+
+\f0 aaa authentication ssh console LOCAL
+\f1 \
+
+\f0 aaa authentication http console LOCAL
+\f1 \
+
+\f0 http server enable
+\f1 \
+
+\f0 http 0.0.0.0 0.0.0.0 management
+\f1 \
+
+\f0 no snmp-server location
+\f1 \
+
+\f0 no snmp-server contact
+\f1 \
+
+\f0 crypto ipsec security-association pmtu-aging infinite
+\f1 \
+
+\f0 crypto ca trustpoint _SmartCallHome_ServerCA
+\f1 \
+
+\f0 \'a0no validation-usage
+\f1 \
+
+\f0 \'a0crl configure
+\f1 \
+
+\f0 crypto ca trustpool policy
+\f1 \
+
+\f0 \'a0auto-import
+\f1 \
+
+\f0 telnet timeout 5
+\f1 \
+
+\f0 ssh scopy enable
+\f1 \
+
+\f0 ssh stricthostkeycheck
+\f1 \
+
+\f0 ssh 172.16.112.0 255.255.255.0 management
+\f1 \
+
+\f0 ssh timeout 5
+\f1 \
+
+\f0 ssh key-exchange group dh-group1-sha1
+\f1 \
+
+\f0 console timeout 0
+\f1 \
+
+\f0 threat-detection basic-threat
+\f1 \
+
+\f0 threat-detection statistics access-list
+\f1 \
+
+\f0 no threat-detection statistics tcp-intercept
+\f1 \
+
+\f0 dynamic-access-policy-record DfltAccessPolicy
+\f1 \
+
+\f0 password-policy minimum-length 5
+\f1 \
+
+\f0 password-policy minimum-lowercase 1
+\f1 \
+
+\f0 username scadora password 4hcZtbXrx6/7eP1U encrypted
+\f1 \
+
+\f0 username cisco password 3USUcOPFUiMCO4Jk encrypted privilege 15
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 class-map inspection_default
+\f1 \
+
+\f0 \'a0match default-inspection-traffic
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 policy-map type inspect dns migrated_dns_map_1
+\f1 \
+
+\f0 \'a0parameters
+\f1 \
+
+\f0 \'a0 message-length maximum client auto
+\f1 \
+
+\f0 \'a0 message-length maximum 512
+\f1 \
+
+\f0 policy-map global_policy
+\f1 \
+
+\f0 \'a0class inspection_default
+\f1 \
+
+\f0 \'a0 inspect dns migrated_dns_map_1
+\f1 \
+
+\f0 \'a0 inspect ftp
+\f1 \
+
+\f0 \'a0 inspect h323 h225
+\f1 \
+
+\f0 \'a0 inspect h323 ras
+\f1 \
+
+\f0 \'a0 inspect ip-options
+\f1 \
+
+\f0 \'a0 inspect netbios
+\f1 \
+
+\f0 \'a0 inspect rsh
+\f1 \
+
+\f0 \'a0 inspect rtsp
+\f1 \
+
+\f0 \'a0 inspect skinny
+\f1 \
+
+\f0 \'a0 inspect esmtp
+\f1 \
+
+\f0 \'a0 inspect sqlnet
+\f1 \
+
+\f0 \'a0 inspect sunrpc
+\f1 \
+
+\f0 \'a0 inspect tftp
+\f1 \
+
+\f0 \'a0 inspect sip
+\f1 \
+
+\f0 \'a0 inspect xdmcp
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 service-policy global_policy global
+\f1 \
+
+\f0 prompt hostname context
+\f1 \
+
+\f0 call-home reporting anonymous prompt 2
+\f1 \
+
+\f0 call-home
+\f1 \
+
+\f0 \'a0profile License
+\f1 \
+
+\f0 \'a0 destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+\f1 \
+
+\f0 \'a0 destination transport-method http
+\f1 \
+
+\f0 \'a0profile CiscoTAC-1
+\f1 \
+
+\f0 \'a0 no active
+\f1 \
+
+\f0 \'a0 destination address http https://tools.cisco.com/its/service/oddce/services/DDCEService
+\f1 \
+
+\f0 \'a0 destination address email callhome@cisco.com
+\f1 \
+
+\f0 \'a0 destination transport-method http
+\f1 \
+
+\f0 \'a0 subscribe-to-alert-group diagnostic
+\f1 \
+
+\f0 \'a0 subscribe-to-alert-group environment
+\f1 \
+
+\f0 \'a0 subscribe-to-alert-group inventory periodic monthly
+\f1 \
+
+\f0 \'a0 subscribe-to-alert-group configuration periodic monthly
+\f1 \
+
+\f0 \'a0 subscribe-to-alert-group telemetry periodic daily
+\f1 \
+
+\f0 !
+\f1 \
+
+\f0 rest-api image disk0:/asa-restapi-131-lfbff-k8.SPA
+\f1 \
+
+\f0 rest-api agent
+\f1 \
+
+\f0 : end
+\f1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\fs26 \cf0 ciscoasa#\
+}
