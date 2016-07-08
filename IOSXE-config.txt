@@ -1,0 +1,112 @@
+CSR1KV_3_17#show run
+Building configuration...
+
+Current configuration : 1470 bytes
+!
+! Last configuration change at 14:47:01 UTC Thu Jul 7 2016
+!
+version 16.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console auto
+!
+hostname CSR1KV_3_17
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+ip domain name cisco.com
+!
+!
+!
+subscriber templating
+!
+!
+!
+multilink bundle-name authenticated
+!
+diagnostic bootup level minimal
+archive
+ path bootflash:/
+!
+spanning-tree extend system-id
+remote-management
+  no restful-api
+  dmi
+!
+username cisco privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+interface VirtualPortGroup0
+ ip unnumbered GigabitEthernet1
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet1
+ description Configured using ncclient
+ ip address 172.16.112.100 255.255.255.0
+ negotiation auto
+!
+interface GigabitEthernet2
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3
+ shutdown
+ negotiation auto
+!
+!
+virtual-service csr_mgmt
+ vnic gateway VirtualPortGroup0
+  guest ip address 172.16.112.101
+ activate
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+ip route 172.16.112.101 255.255.255.255 VirtualPortGroup0
+ip ssh version 2
+!
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input all
+!
+!
+!
+!
+!
+!
+end
+
+CSR1KV_3_17#
+
+
